@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zandile Artistry | Premium Makeup Artist in South Africa</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#4A0018',
+                        gold: '#C9A84C',
+                        ivory: '#FAF6F0',
+                        nearblack: '#0D0D0D',
+                    },
+                    fontFamily: {
+                        cormorant: ['"Cormorant Garamond"', 'serif'],
+                        outfit: ['"Outfit"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Animations */
+        body {
+            background-color: #0D0D0D;
+            color: #FAF6F0;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D0D0D;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4A0018;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C9A84C;
+        }
+
+        /* Text Utilities */
+        .text-outline-gold {
+            -webkit-text-stroke: 1px #C9A84C;
+            color: transparent;
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Fancy separator */
+        .separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .separator::before, .separator::after {
+            content: '';
+            height: 1px;
+            width: 60px;
+            background-color: #C9A84C;
+            margin: 0 15px;
+        }
+        .separator i {
+            color: #C9A84C;
+            font-size: 0.8rem;
+        }
+        
+        /* Stacked text effect */
+        .stacked-text-bg {
+            line-height: 0.8;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body class="font-outfit antialiased selection:bg-gold selection:text-nearblack">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-nearblack/90 backdrop-blur-md border-b border-white/5 py-4" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="font-cormorant text-2xl tracking-widest text-gold uppercase">Zandile<span class="text-ivory">.</span></a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 text-sm tracking-widest uppercase font-light text-ivory/80">
+                <a href="#about" class="hover:text-gold transition-colors">About</a>
+                <a href="#services" class="hover:text-gold transition-colors">Services</a>
+                <a href="#portfolio" class="hover:text-gold transition-colors">Portfolio</a>
+                <a href="#faq" class="hover:text-gold transition-colors">FAQs</a>
+                <a href="#testimonials" class="hover:text-gold transition-colors">Testimonial</a>
+                <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-ivory text-2xl">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Background accents -->
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-burgundy/20 to-nearblack/100 z-0 pointer-events-none"></div>
+        <div class="absolute top-1/4 -right-32 w-96 h-96 bg-burgundy rounded-full mix-blend-screen filter blur-[120px] opacity-30 z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Hero Text -->
+            <div class="text-center md:text-left reveal">
+                <p class="font-cormorant italic text-3xl md:text-4xl text-gold mb-2">Enhancing your</p>
+                <h1 class="font-cormorant text-6xl md:text-8xl lg:text-9xl uppercase leading-[0.9] tracking-tight mb-8">
+                    Natural<br>Beauty
+                </h1>
+                <p class="font-light text-ivory/70 max-w-md mx-auto md:mx-0 mb-8 text-lg">
+                    Johannesburg's premier makeup artistry. Elevating your features with precision, luxury, and a touch of gold for your most unforgettable moments.
+                </p>
+                <a href="#contact" class="inline-block border border-gold text-gold hover:bg-gold hover:text-nearblack px-10 py-4 uppercase tracking-[0.2em] text-sm transition-all duration-300">
+                    Book Now
+                </a>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="relative reveal delay-200">
+                <div class="absolute inset-0 bg-gradient-to-t from-nearblack via-transparent to-transparent z-10"></div>
+                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=1000&q=80" alt="Beautiful model with flawless makeup" class="w-full h-auto object-cover rounded-t-full rounded-b-lg opacity-90 shadow-[0_0_50px_rgba(74,0,24,0.3)]">
+                
+                <!-- Floating Element -->
+                <div class="absolute bottom-10 -left-10 z-20 bg-nearblack/80 backdrop-blur-md border border-white/10 p-4 rounded-xl hidden md:flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-burgundy flex items-center justify-center text-gold">
+                        <i class="ph ph-star-four text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-ivory/60 uppercase tracking-wider">Trusted by</p>
+                        <p class="font-cormorant text-xl text-gold">500+ Brides</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Icon Navigation / Quick Links -->
+    <section class="py-12 border-b border-white/5 relative z-10 bg-nearblack">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-6 md:gap-12">
+                <!-- Icon Item -->
+                <a href="#about" class="group flex flex-col items-center gap-3">
+                    <div class="w-16 h-16 rounded-full border border-white/20 group-hover:border-gold flex items-center justify-center text-ivory/70 group-hover:text-gold transition-all duration-300 bg-white/5 group-hover:bg-burgundy/20">
+                        <i class="ph ph-user text-2xl"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-ivory/50 group-hover:text-ivory transition-colors">About</span>
+                </a>
+                <a href="#services" class="group flex flex-col items-center gap-3">
+                    <div class="w-16 h-16 rounded-full border border-white/20 group-hover:border-gold flex items-center justify-center text-ivory/70 group-hover:text-gold transition-all duration-300 bg-white/5 group-hover:bg-burgundy/20">
+                        <i class="ph ph-sparkle text-2xl"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-ivory/50 group-hover:text-ivory transition-colors">Services</span>
+                </a>
+                <a href="#portfolio" class="group flex flex-col items-center gap-3">
+                    <div class="w-16 h-16 rounded-full border border-white/20 group-hover:border-gold flex items-center justify-center text-ivory/70 group-hover:text-gold transition-all duration-300 bg-white/5 group-hover:bg-burgundy/20">
+                        <i class="ph ph-image text-2xl"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-ivory/50 group-hover:text-ivory transition-colors">Portfolio</span>
+                </a>
+                <a href="#faq" class="group flex flex-col items-center gap-3">
+                    <div class="w-16 h-16 rounded-full border border-white/20 group-hover:border-gold flex items-center justify-center text-ivory/70 group-hover:text-gold transition-all duration-300 bg-white/5 group-hover:bg-burgundy/20">
+                        <i class="ph ph-chats-circle text-2xl"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-ivory/50 group-hover:text-ivory transition-colors">FAQs</span>
+                </a>
+                <a href="#testimonials" class="group flex flex-col items-center gap-3">
+                    <div class="w-16 h-16 rounded-full border border-white/20 group-hover:border-gold flex items-center justify-center text-ivory/70 group-hover:text-gold transition-all duration-300 bg-white/5 group-hover:bg-burgundy/20">
+                        <i class="ph ph-star text-2xl"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-ivory/50 group-hover:text-ivory transition-colors">Reviews</span>
+                </a>
+                <a href="#contact" class="group flex flex-col items-center gap-3">
+                    <div class="w-16 h-16 rounded-full border border-white/20 group-hover:border-gold flex items-center justify-center text-ivory/70 group-hover:text-gold transition-all duration-300 bg-white/5 group-hover:bg-burgundy/20">
+                        <i class="ph ph-phone text-2xl"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-ivory/50 group-hover:text-ivory transition-colors">Contact</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 bg-nearblack relative">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal">
+            <h2 class="font-cormorant text-6xl md:text-7xl uppercase mb-2">About Us</h2>
+            <p class="text-xs tracking-[0.3em] uppercase text-gold mb-8">Celebrating African Excellence in Beauty</p>
+            
+            <div class="separator"><i class="ph-fill ph-diamond"></i></div>
+            
+            <p class="text-ivory/70 font-light leading-relaxed md:text-lg mt-8 max-w-2xl mx-auto">
+                Welcome to Zandile Artistry! I'm Zandile Ndlovu, a professional makeup artist specializing in creating stunning looks for weddings, high-fashion photoshoots, and special events across South Africa. Whether you're looking for a radiant, natural glow or a bold, editorial transformation, I'm here to bring your vision to life while honoring your unique skin tone and features.
+            </p>
+
+            <div class="mt-20 reveal delay-200">
+                <div class="relative w-48 h-48 mx-auto mb-6">
+                    <div class="absolute inset-0 rounded-full border border-gold scale-110 -rotate-6"></div>
+                    <img src="https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?auto=format&fit=crop&w=600&q=80" alt="Zandile Ndlovu MUA" class="w-full h-full object-cover rounded-full">
+                </div>
+                <h3 class="font-outfit uppercase tracking-widest text-sm border-b border-white/20 pb-2 inline-block">Zandile Ndlovu</h3>
+                
+                <div class="mt-12 text-center relative max-w-3xl mx-auto">
+                    <p class="font-cormorant text-4xl italic text-ivory/40 absolute -top-10 -right-10 md:right-0 transform rotate-[-15deg] pointer-events-none">Your Trusted<br>Makeup Artist</p>
+                    <h2 class="font-cormorant text-5xl uppercase mb-6 text-gold">Meet The MUA</h2>
+                    <p class="text-ivory/70 font-light leading-relaxed">
+                        Hi, I'm Zandile! With over 8 years of experience in the Johannesburg beauty industry, I've had the privilege of working with countless clients to help them look and feel their absolute best. My passion lies in enhancing natural beauty, using premium products that withstand the South African climate, while tailoring each look to suit your unique style and personality.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-[#111111] relative border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="reveal">
+                <h2 class="font-cormorant text-6xl md:text-7xl uppercase mb-2">Services List</h2>
+                <p class="text-xs tracking-[0.3em] uppercase text-ivory/50 mb-16">Makeup Services For Every Occasion</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                <!-- Service 1 -->
+                <div class="group cursor-pointer reveal delay-100">
+                    <div class="relative w-full aspect-square rounded-full overflow-hidden mb-6 border-2 border-transparent group-hover:border-gold transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=600&q=80" alt="Bridal Makeup" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-burgundy/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <h3 class="font-cormorant text-2xl uppercase mb-2 text-ivory">Bridal Makeup</h3>
+                    <p class="text-gold text-sm tracking-widest uppercase">Starting at R1,500</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group cursor-pointer reveal delay-200">
+                    <div class="relative w-full aspect-square rounded-full overflow-hidden mb-6 border-2 border-transparent group-hover:border-gold transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80" alt="Special Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-burgundy/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <h3 class="font-cormorant text-2xl uppercase mb-2 text-ivory">Special Event</h3>
+                    <p class="text-gold text-sm tracking-widest uppercase">Starting at R850</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group cursor-pointer reveal delay-300">
+                    <div class="relative w-full aspect-square rounded-full overflow-hidden mb-6 border-2 border-transparent group-hover:border-gold transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1616886292376-79c23565f123?auto=format&fit=crop&w=600&q=80" alt="Photoshoot Makeup" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-burgundy/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <h3 class="font-cormorant text-2xl uppercase mb-2 text-ivory">Photoshoot</h3>
+                    <p class="text-gold text-sm tracking-widest uppercase">Starting at R1,200</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="group cursor-pointer reveal delay-400">
+                    <div class="relative w-full aspect-square rounded-full overflow-hidden mb-6 border-2 border-transparent group-hover:border-gold transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Everyday Glam" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-burgundy/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <h3 class="font-cormorant text-2xl uppercase mb-2 text-ivory">Everyday Glam</h3>
+                    <p class="text-gold text-sm tracking-widest uppercase">Starting at R750</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 reveal delay-200">
+                 <a href="#contact" class="inline-block border border-white/20 hover:border-gold text-ivory hover:text-gold px-8 py-3 uppercase tracking-[0.2em] text-xs transition-all duration-300">
+                    View Full Price List
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-nearblack relative overflow-hidden">
+        <!-- Abstract shape -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-burgundy rounded-full mix-blend-screen filter blur-[100px] opacity-20 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 reveal">
+            <div class="text-center mb-16">
+                <h2 class="font-cormorant text-5xl md:text-6xl uppercase mb-2">Love Notes</h2>
+                <div class="separator"><i class="ph-fill ph-heart"></i></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white/5 border border-white/10 p-8 hover:border-gold/50 transition-colors duration-300 group">
+                    <div class="flex text-gold mb-4 text-sm">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="font-light text-ivory/80 italic mb-6">"Zandile is a magician! She did my bridal makeup and it lasted the entire day through tears and dancing. She matched my complexion perfectly, which is often hard to find. Absolutely stunning work."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-burgundy flex items-center justify-center font-cormorant text-xl text-gold">L</div>
+                        <div>
+                            <p class="uppercase tracking-wider text-xs text-ivory font-medium">Lerato M.</p>
+                            <p class="text-[10px] text-ivory/50 uppercase tracking-widest">Bride</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white/5 border border-white/10 p-8 hover:border-gold/50 transition-colors duration-300 group">
+                    <div class="flex text-gold mb-4 text-sm">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="font-light text-ivory/80 italic mb-6">"Booked her for a maternity shoot. She understood the assignment perfectly—soft, glowing, and natural. Her energy is also so calming which is exactly what you need before a shoot."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-burgundy flex items-center justify-center font-cormorant text-xl text-gold">T</div>
+                        <div>
+                            <p class="uppercase tracking-wider text-xs text-ivory font-medium">Thando K.</p>
+                            <p class="text-[10px] text-ivory/50 uppercase tracking-widest">Photoshoot</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white/5 border border-white/10 p-8 hover:border-gold/50 transition-colors duration-300 group">
+                    <div class="flex text-gold mb-4 text-sm">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="font-light text-ivory/80 italic mb-6">"My go-to MUA in Sandton! Always punctual, professional, and her kit is incredibly hygienic. She gives me the perfect glam for my gala events every single time."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-burgundy flex items-center justify-center font-cormorant text-xl text-gold">N</div>
+                        <div>
+                            <p class="uppercase tracking-wider text-xs text-ivory font-medium">Nomzamo B.</p>
+                            <p class="text-[10px] text-ivory/50 uppercase tracking-widest">Special Event</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-[#111111] border-y border-white/5">
+        <div class="max-w-3xl mx-auto px-6 reveal">
+            <h2 class="font-cormorant text-5xl md:text-6xl uppercase mb-12 text-center text-gold">FAQ</h2>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-white/10 overflow-hidden bg-nearblack">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none hover:bg-white/5 transition-colors">
+                        <span class="font-cormorant text-xl uppercase tracking-wider">Do you travel to venues?</span>
+                        <i class="ph ph-plus text-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 pt-2 text-ivory/70 font-light text-sm border-t border-white/5">
+                        Yes, I am a mobile makeup artist. I travel across Gauteng for weddings and special events. Travel fees apply outside a 20km radius of Sandton, Johannesburg. Let me know your location when booking!
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-white/10 overflow-hidden bg-nearblack">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none hover:bg-white/5 transition-colors">
+                        <span class="font-cormorant text-xl uppercase tracking-wider">Do you cater to all skin tones?</span>
+                        <i class="ph ph-plus text-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 pt-2 text-ivory/70 font-light text-sm border-t border-white/5">
+                        Absolutely. My kit is fully equipped with high-end, professional brands designed to cater to every skin tone, type, and texture, with a deep specialization in melanated skin.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-white/10 overflow-hidden bg-nearblack">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none hover:bg-white/5 transition-colors">
+                        <span class="font-cormorant text-xl uppercase tracking-wider">How do I secure a bridal booking?</span>
+                        <i class="ph ph-plus text-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 pt-2 text-ivory/70 font-light text-sm border-t border-white/5">
+                        A 50% non-refundable retainer and a signed contract are required to secure your wedding date. I highly recommend booking a bridal trial 2-3 months prior to the big day.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking / Contact Section (Stacked Text Visual) -->
+    <section id="contact" class="relative bg-nearblack pt-32 pb-20 overflow-hidden min-h-[90vh] flex flex-col items-center justify-center">
+        
+        <!-- Stacked "BOOK WITH US" Background Effect -->
+        <div class="absolute inset-0 flex flex-col justify-center items-center opacity-30 select-none pointer-events-none z-0">
+            <h2 class="font-cormorant text-[12vw] uppercase stacked-text-bg text-ivory/40">BOOK WITH US</h2>
+            <h2 class="font-cormorant text-[12vw] uppercase stacked-text-bg text-ivory/60">BOOK WITH US</h2>
+            <h2 class="font-cormorant text-[12vw] uppercase stacked-text-bg text-gold">BOOK WITH US</h2>
+            <h2 class="font-cormorant text-[12vw] uppercase stacked-text-bg text-ivory/60">BOOK WITH US</h2>
+            <h2 class="font-cormorant text-[12vw] uppercase stacked-text-bg text-ivory/40">BOOK WITH US</h2>
+        </div>
+
+        <!-- Foreground Image overlapping text -->
+        <div class="relative z-10 mt-[-10vh] md:mt-[-20vh] mb-12 reveal">
+            <img src="https://images.unsplash.com/photo-1523825036634-aab3cce06d69?auto=format&fit=crop&w=800&q=80" alt="Makeup details" class="w-[80vw] max-w-[400px] h-[500px] object-cover rounded-t-full shadow-2xl border-4 border-nearblack">
+        </div>
+
+        <!-- Contact Form Container -->
+        <div class="relative z-20 bg-nearblack/90 backdrop-blur-xl border border-white/10 p-8 md:p-12 max-w-2xl w-full mx-6 reveal delay-200 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+            <h3 class="font-cormorant text-4xl uppercase text-center mb-2 text-gold">Get in Touch</h3>
+            <p class="text-center text-sm font-light text-ivory/60 mb-8">Ready to secure your date? Fill out the form below.</p>
+            
+            <form class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-ivory/60 mb-2">Name</label>
+                        <input type="text" class="w-full bg-transparent border-b border-white/20 px-0 py-2 focus:outline-none focus:border-gold text-ivory transition-colors placeholder-ivory/20" placeholder="Jane Doe">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-ivory/60 mb-2">Email</label>
+                        <input type="email" class="w-full bg-transparent border-b border-white/20 px-0 py-2 focus:outline-none focus:border-gold text-ivory transition-colors placeholder-ivory/20" placeholder="jane@example.com">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-ivory/60 mb-2">Service Type</label>
+                    <select class="w-full bg-transparent border-b border-white/20 px-0 py-2 focus:outline-none focus:border-gold text-ivory transition-colors appearance-none">
+                        <option value="" disabled selected class="text-nearblack">Select a service...</option>
+                        <option value="bridal" class="text-nearblack">Bridal Makeup</option>
+                        <option value="event" class="text-nearblack">Special Event</option>
+                        <option value="photoshoot" class="text-nearblack">Photoshoot</option>
+                        <option value="other" class="text-nearblack">Other Inquiries</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-ivory/60 mb-2">Message & Details</label>
+                    <textarea rows="3" class="w-full bg-transparent border-b border-white/20 px-0 py-2 focus:outline-none focus:border-gold text-ivory transition-colors placeholder-ivory/20 resize-none" placeholder="Date, location, and party size..."></textarea>
+                </div>
+                
+                <button type="submit" class="w-full bg-burgundy hover:bg-gold text-ivory hover:text-nearblack py-4 uppercase tracking-[0.2em] text-sm transition-all duration-300 font-medium">
+                    Send Inquiry
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#080808] border-t border-white/10 py-12 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <a href="#" class="font-cormorant text-3xl tracking-widest text-gold uppercase inline-block mb-6">Zandile<span class="text-ivory">.</span></a>
+            
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-burgundy hover:text-gold transition-colors">
+                    <i class="ph-fill ph-instagram-logo text-xl"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-burgundy hover:text-gold transition-colors">
+                    <i class="ph-fill ph-tiktok-logo text-xl"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-burgundy hover:text-gold transition-colors">
+                    <i class="ph-fill ph-facebook-logo text-xl"></i>
+                </a>
+            </div>
+            
+            <p class="text-xs text-ivory/40 tracking-widest uppercase">&copy; 2026 Zandile Artistry. All Rights Reserved.</p>
+            <p class="text-[10px] text-ivory/30 mt-2 tracking-widest uppercase">Johannesburg, South Africa</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Navbar Scrolled State
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.replace('py-4', 'py-2');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.replace('py-2', 'py-4');
+            }
+        });
+
+        // Reveal Animation on Scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // FAQ Accordion Logic
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                
+                // Toggle current
+                content.classList.toggle('hidden');
+                
+                if(content.classList.contains('hidden')) {
+                    icon.classList.replace('ph-minus', 'ph-plus');
+                } else {
+                    icon.classList.replace('ph-plus', 'ph-minus');
+                }
+
+                // Optional: Close others (uncomment to make it behave like an exclusive accordion)
+                /*
+                faqBtns.forEach(otherBtn => {
+                    if (otherBtn !== btn) {
+                        otherBtn.nextElementSibling.classList.add('hidden');
+                        otherBtn.querySelector('i').classList.replace('ph-minus', 'ph-plus');
+                    }
+                });
+                */
+            });
+        });
+    </script>
+</body>
+</html>
